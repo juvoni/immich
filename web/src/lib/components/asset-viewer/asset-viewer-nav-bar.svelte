@@ -10,6 +10,7 @@
   import RemoveAssetFromStack from '$lib/components/asset-viewer/actions/remove-asset-from-stack.svelte';
   import RemoveFromAlbumAction from '$lib/components/timeline/actions/RemoveFromAlbumAction.svelte';
   import RestoreAction from '$lib/components/asset-viewer/actions/restore-action.svelte';
+  import PlayaLensSocialInboxAction from '$lib/components/asset-viewer/actions/playa-lens-social-inbox-action.svelte';
   import SetAlbumCoverAction from '$lib/components/asset-viewer/actions/set-album-cover-action.svelte';
   import SetFeaturedPhotoAction from '$lib/components/asset-viewer/actions/set-person-featured-action.svelte';
   import SetProfilePictureAction from '$lib/components/asset-viewer/actions/set-profile-picture-action.svelte';
@@ -160,6 +161,7 @@
         {/if}
 
         <ActionMenuItem action={Actions.AddToAlbum} />
+        <PlayaLensSocialInboxAction {asset} />
         {#if album && (isOwner || isAlbumOwner)}
           <RemoveFromAlbumAction {album} onRemove={onRemoveFromAlbum} assetIds={[asset.id]} menuItem />
         {/if}

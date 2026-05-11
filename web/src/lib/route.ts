@@ -114,6 +114,7 @@ export const Route = {
 
   // sharing
   sharing: () => '/sharing',
+  playaLensSocialPosts: () => '/social/posts',
 
   // shared links
   sharedLinks: (params?: { filter?: SharedLinkTab }) => '/shared-links' + asQueryString(params),

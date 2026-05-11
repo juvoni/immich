@@ -1,5 +1,6 @@
 <script lang="ts">
   import BottomInfo from '$lib/components/shared-components/side-bar/bottom-info.svelte';
+  import PlayaLensSocialNavbarItem from '$lib/components/shared-components/side-bar/playa-lens-social-navbar-item.svelte';
   import RecentAlbums from '$lib/components/shared-components/side-bar/recent-albums.svelte';
   import Sidebar from '$lib/components/sidebar/sidebar.svelte';
   import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
@@ -61,6 +62,8 @@
     icon={mdiAccountMultipleOutline}
     activeIcon={mdiAccountMultiple}
   />
+
+  <PlayaLensSocialNavbarItem />
 
   <NavbarGroup title={$t('library')} size="tiny" />
 
