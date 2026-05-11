@@ -12,6 +12,7 @@
   import DownloadAction from '$lib/components/timeline/actions/DownloadAction.svelte';
   import FavoriteAction from '$lib/components/timeline/actions/FavoriteAction.svelte';
   import LinkLivePhotoAction from '$lib/components/timeline/actions/LinkLivePhotoAction.svelte';
+  import PlayaLensBulkSocialAction from '$lib/components/timeline/actions/PlayaLensBulkSocialAction.svelte';
   import SelectAllAssets from '$lib/components/timeline/actions/SelectAllAction.svelte';
   import SetVisibilityAction from '$lib/components/timeline/actions/SetVisibilityAction.svelte';
   import StackAction from '$lib/components/timeline/actions/StackAction.svelte';
@@ -153,6 +154,7 @@
         {#if $preferences.tags.enabled}
           <TagAction menuItem />
         {/if}
+        <PlayaLensBulkSocialAction menuItem />
         <DeleteAssets
           menuItem
           onAssetDelete={(assetIds) => timelineManager.removeAssets(assetIds)}
