@@ -168,6 +168,9 @@
       </ButtonContextMenu>
     {:else}
       <DownloadAction />
+      <ButtonContextMenu icon={mdiDotsVertical} title={$t('menu')}>
+        <PlayaLensBulkSocialAction menuItem />
+      </ButtonContextMenu>
     {/if}
   </AssetSelectControlBar>
 {/if}

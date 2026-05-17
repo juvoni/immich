@@ -28,7 +28,7 @@
     if (inboxLoading) {
       return;
     }
-    const assetIds = assetMultiSelectManager.ownedAssets.map((asset) => asset.id);
+    const assetIds = assetMultiSelectManager.assets.map((asset) => asset.id);
     if (assetIds.length === 0) {
       return;
     }
@@ -95,7 +95,7 @@
     if (composeLoading) {
       return;
     }
-    const assetIds = assetMultiSelectManager.ownedAssets.map((asset) => asset.id);
+    const assetIds = assetMultiSelectManager.assets.map((asset) => asset.id);
     if (assetIds.length === 0) {
       return;
     }
