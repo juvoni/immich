@@ -143,5 +143,14 @@
       </svg>
     </div>
     <div>%sveltekit.body%</div>
+    <!--
+      Playa Lens: load shared helper clients from the same-origin /static
+      mount. They live here, not in an edge sub_filter, so the native fork works
+      identically in dev (nginx) and prod (Caddy has no HTML injection). The
+      thinned PlayaLens* components call these globals while API/data ownership
+      stays in catalog-api.
+    -->
+    <script defer src="/static/pl-ext/social-inbox-client.js"></script>
+    <script defer src="/static/pl-ext/similar-media-client.js"></script>
   </body>
 </html>

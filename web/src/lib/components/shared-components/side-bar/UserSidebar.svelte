@@ -1,5 +1,6 @@
 <script lang="ts">
   import BottomInfo from '$lib/components/shared-components/side-bar/BottomInfo.svelte';
+  import PlayaLensSocialNavbarItem from '$lib/components/shared-components/side-bar/PlayaLensSocialNavbarItem.svelte';
   import RecentAlbums from '$lib/components/shared-components/side-bar/RecentAlbums.svelte';
   import Sidebar from '$lib/components/sidebar/Sidebar.svelte';
   import { authManager } from '$lib/managers/auth-manager.svelte';
@@ -62,6 +63,8 @@
     icon={mdiAccountMultipleOutline}
     activeIcon={mdiAccountMultiple}
   />
+
+  <PlayaLensSocialNavbarItem />
 
   <NavbarGroup title={$t('library')} size="tiny" />
 

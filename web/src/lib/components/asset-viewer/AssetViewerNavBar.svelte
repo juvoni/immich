@@ -5,6 +5,8 @@
   import ArchiveAction from '$lib/components/asset-viewer/actions/ArchiveAction.svelte';
   import DeleteAction from '$lib/components/asset-viewer/actions/DeleteAction.svelte';
   import KeepThisDeleteOthersAction from '$lib/components/asset-viewer/actions/KeepThisDeleteOthers.svelte';
+  import PlayaLensSimilarMediaAction from '$lib/components/asset-viewer/actions/PlayaLensSimilarMediaAction.svelte';
+  import PlayaLensSocialInboxAction from '$lib/components/asset-viewer/actions/PlayaLensSocialInboxAction.svelte';
   import RatingAction from '$lib/components/asset-viewer/actions/RatingAction.svelte';
   import RemoveAssetFromStack from '$lib/components/asset-viewer/actions/RemoveAssetFromStack.svelte';
   import RestoreAction from '$lib/components/asset-viewer/actions/RestoreAction.svelte';
@@ -124,6 +126,11 @@
     <ActionButton action={Actions.Favorite} />
     <ActionButton action={Actions.Unfavorite} />
 
+    {#if !sharedLink}
+      <PlayaLensSocialInboxAction {asset} menuItem={false} />
+      <PlayaLensSimilarMediaAction {asset} menuItem={false} />
+    {/if}
+
     {#if isOwner}
       <RatingAction {asset} {onAction} />
     {/if}
@@ -146,6 +153,8 @@
         {/if}
 
         <ActionMenuItem action={Actions.AddToAlbum} />
+        <PlayaLensSocialInboxAction {asset} />
+        <PlayaLensSimilarMediaAction {asset} />
         {#if album && (isOwner || isAlbumOwner)}
           <RemoveFromAlbumAction {album} onRemove={onRemoveFromAlbum} assetIds={[asset.id]} menuItem />
         {/if}
