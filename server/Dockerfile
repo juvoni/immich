@@ -89,7 +89,7 @@ ENV NODE_ENV=production \
 
 RUN apt-get update && \
   apt-get upgrade --yes && \
-  npm install --global npm@12.0.1 && \
+  npm install --global npm@11.18.0 && \
   rm -rf /var/lib/apt/lists/*
 
 COPY --from=server /output/server-pruned ./server
