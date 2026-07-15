@@ -87,6 +87,11 @@ ENV NODE_ENV=production \
   NVIDIA_DRIVER_CAPABILITIES=all \
   NVIDIA_VISIBLE_DEVICES=all
 
+RUN apt-get update && \
+  apt-get upgrade --yes && \
+  npm install --global npm@12.0.1 && \
+  rm -rf /var/lib/apt/lists/*
+
 COPY --from=server /output/server-pruned ./server
 COPY --from=web /usr/src/app/web/build /build/www
 COPY --from=cli /output/cli-pruned ./cli
