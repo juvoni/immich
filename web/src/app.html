@@ -13,8 +13,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
     <link rel="icon" type="image/png" sizes="144x144" href="/favicon-144.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180.png" />
-    <link rel="preload" as="font" type="font/ttf" href="%app.font%" crossorigin="anonymous" />
-    <link rel="preload" as="font" type="font/ttf" href="%app.monofont%" crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href="%app.font%" crossorigin="anonymous" />
 
     <script>
       try {
@@ -66,19 +65,20 @@
 
       #stencil {
         --stencil-width: 150px;
-        display: flex;
-        width: var(--stencil-width);
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: calc(50vh - var(--stencil-width) / 2);
-        margin-bottom: 100vh;
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        display: grid;
         place-items: center;
-        justify-content: center;
-        overflow: hidden;
+        pointer-events: none;
         visibility: hidden;
-        animation:
-          0s linear 0.3s forwards delayedVisibility,
-          loadspin 8s linear infinite;
+        animation: 0s linear 0.3s forwards delayedVisibility;
+      }
+
+      #stencil svg {
+        width: var(--stencil-width);
+        height: var(--stencil-width);
+        animation: loadspin 8s linear infinite;
       }
     </style>
     <link rel="stylesheet" href="/custom.css" />
